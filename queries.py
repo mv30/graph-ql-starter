@@ -17,3 +17,12 @@ def resolve_find_one_by_id( obj, info, student_id):
         if student.id == student_id:
             return student
     return None
+
+def resolve_create_using_primitives( obj, info, id, name, age):
+    student = Student( id, name, age)
+    students.append(student)
+    return student  
+
+def resolve_create_using_object( obj, info, student):
+    students.append(student)
+    return student

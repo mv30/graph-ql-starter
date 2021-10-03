@@ -1,5 +1,6 @@
 schema {
     query: Query
+    mutation: Mutation
 }
 
 type Student{
@@ -8,7 +9,18 @@ type Student{
     age: Int!
 }
 
+input StudentDetails{
+    id: Int
+    name: String!
+    age: Int!
+}
+
 type Query {
     findAny: Student!
     findOneById( studentId: Int!): Student!
+}
+
+type Mutation {
+    createUsingPrimitives( id: Int!, name: String!, age: Int!): Student!
+    createUsingObject( student: StudentDetails!): Student!
 }
