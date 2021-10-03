@@ -1,0 +1,14 @@
+schema {
+    query: Query
+}
+
+type Student{
+    id: Int
+    name: String!
+    age: Int!
+}
+
+type Query {
+    findAny: Student!
+    findOneById( studentId: Int!): Student!
+}
